@@ -27,7 +27,7 @@
   };
 
   home.username = lib.mkDefault "maddoger";
-  home.homeDirectory = lib.mkDefault "/home/${config.home.username}";
+  home.homeDirectory = lib.mkDefault "/home/maddoger";
   home.stateVersion = lib.mkDefault "24.11";
 
   #colorscheme.mode = lib.mkOverride 1499 "dark";
