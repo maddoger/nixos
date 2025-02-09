@@ -21,11 +21,6 @@ in {
     packages = [pkgs.home-manager];
   };
 
-  # sops.secrets.maddoger-password = {
-  #   sopsFile = ../../secrets.yaml;
-  #   neededForUsers = true;
-  # };
-
   home-manager.users.maddoger = import ../../../../home/maddoger/${config.networking.hostName}.nix;
 
   # security.pam.services = {
