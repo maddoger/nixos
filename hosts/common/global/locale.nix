@@ -18,6 +18,6 @@
       "ru_RU.UTF-8/UTF-8"
     ];
   };
-  location.provider = "geoclue2";
+  #location.provider = "geoclue2";
   time.timeZone = lib.mkDefault "Europe/Samara";
 }

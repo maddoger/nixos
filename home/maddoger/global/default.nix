@@ -1,10 +1,39 @@
-{ lib, config, ... }:
-
 {
+  inputs,
+  lib,
+  pkgs,
+  config,
+  outputs,
+  ...
+}:
+{
+  imports =
+    [
+      #inputs.impermanence.nixosModules.home-manager.impermanence
+      ../features/cli
+    ]
+    ++ (builtins.attrValues outputs.homeManagerModules);
+
+  nix = {
+    package = lib.mkDefault pkgs.nix;
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "ca-derivations"
+      ];
+      warn-dirty = false;
+    };
+  };
+
   home.username = lib.mkDefault "maddoger";
-  home.description = lib.mkDefault "Vitaliy Syrchikov";
   home.homeDirectory = lib.mkDefault "/home/${config.home.username}";
   home.stateVersion = lib.mkDefault "24.11";
 
   #colorscheme.mode = lib.mkOverride 1499 "dark";
+
+  programs = {
+    home-manager.enable = true;
+    git.enable = true;
+  };
 }

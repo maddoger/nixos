@@ -9,7 +9,7 @@
       inputs.home-manager.nixosModules.home-manager
       ./locale.nix
       ./nix.nix
-      ./optin-persistence.nix
+      #./optin-persistence.nix
       ./steam-hardware.nix
       ./gamemode.nix
       ./nix-ld.nix
@@ -32,7 +32,6 @@
   };
 
   hardware.enableRedistributableFirmware = true;
-  #networking.domain = "m7.rs";
 
   # Increase open file limit for sudoers
   security.pam.loginLimits = [

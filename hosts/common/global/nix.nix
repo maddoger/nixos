@@ -15,7 +15,7 @@ in {
       experimental-features = [
         "nix-command"
         "flakes"
-        #"ca-derivations" # https://nixos.wiki/wiki/Ca-derivations
+        "ca-derivations" # https://nixos.wiki/wiki/Ca-derivations
       ];
       warn-dirty = false;
       # TODO test later

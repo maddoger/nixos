@@ -10,9 +10,9 @@
       ./hardware-configuration.nix
       ../common/global
       ../common/users/maddoger
-      ../common/optional/pipewire.nix
-      ../common/optional/printing.nix
-      ../common/optional/gnome.nix
+      #../common/optional/pipewire.nix
+      #../common/optional/printing.nix
+      #../common/optional/gnome.nix
       #../common/optional/gamemode.nix
       #../common/optional/docker.nix
     ];
@@ -23,9 +23,6 @@
 
   # Latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Network
   networking.hostName = "maddoger-pc"; # Define your hostname.
@@ -64,5 +61,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-
 }

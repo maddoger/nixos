@@ -32,17 +32,17 @@
     );
   in {
     inherit lib;
-    nixosModules = import ./modules/nixos;
+    overlays = {};
+    nixosModules = {};
     homeManagerModules = import ./modules/home-manager;
 
     nixosConfigurations = {
       # Main desktop
-      "maddoger-pc" = nixpkgs.lib.nixosSystem {
-        modules = [
-          ./configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
-        specialArgs = {inherit inputs;};
+      "maddoger-pc" = lib.nixosSystem {
+        modules = [./hosts/maddoger-pc];
+        specialArgs = {
+          inherit inputs outputs;
+        };
       };
     };
 
@@ -54,6 +54,6 @@
           inherit inputs outputs;
         };
       };
-    }
+    };
   };
 }

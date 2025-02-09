@@ -6,10 +6,11 @@
 }: let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
-  users.mutableUsers = false;
   users.users.maddoger = {
     isNormalUser = true;
-    shell = pkgs.fish;
+    description = "Vitaliy Syrchikov";
+    initialPassword = "1234568";
+    #shell = pkgs.fish;
     extraGroups = ifTheyExist [
       "docker"
       "audio"
@@ -17,9 +18,6 @@ in {
       "wheel"
       "networkmanager"
     ];
-
-    #openssh.authorizedKeys.keys = lib.splitString "\n" (builtins.readFile ../../../../home/maddoger/ssh.pub);
-    #hashedPasswordFile = config.sops.secrets.maddoger-password.path;
     packages = [pkgs.home-manager];
   };
 
