@@ -18,6 +18,8 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
+    useGlobalPkgs = true;
+    useUserPackages = true;
     users = {
       "maddoger" = import ./home.nix;
     };
@@ -93,12 +95,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Install firefox.
-  programs.firefox.enable = true;
-  programs.zsh.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  #nixpkgs.config.allowUnfreePredicate = (_: true);
+
+  programs.zsh.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -109,7 +110,6 @@
      neovim
      wget
      neofetch
-     ghostty 
      mise
   ];
 
