@@ -9,6 +9,6 @@
         autoSuspend = false;
       };
     };
-    gnome.games.enable = true;
+    # gnome.core-utilities.enable = false;
   };
 }

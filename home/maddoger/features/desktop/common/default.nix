@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./font.nix
+    ./ghostty.nix
   ];
 
   home.packages = [
@@ -15,7 +16,6 @@
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     pkgs.bitwarden-desktop
-    pkgs.ghostty
   ];
 
   programs = {
@@ -25,13 +25,15 @@
     brave.enable = true;
   };
 
-    # Also sets org.freedesktop.appearance color-scheme
-  # dconf.settings."org/gnome/desktop/interface".color-scheme =
-  #   if config.colorscheme.mode == "dark"
-  #   then "prefer-dark"
-  #   else if config.colorscheme.mode == "light"
-  #   then "prefer-light"
-  #   else "default";
+  dconf = {
+    enable = true;
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
+
+  xdg.mimeApps.enable = true;
+  #xdg.mimeApps.defaultApplications = {
+  #   "terminal" = "ghostty";
+  # };
 
   # xdg.portal.enable = true;
 }
