@@ -7,6 +7,7 @@
   imports =
     [
       inputs.home-manager.nixosModules.home-manager
+      ./zsh.nix
       ./locale.nix
       ./nix.nix
       #./optin-persistence.nix

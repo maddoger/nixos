@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    # ./fish
-
-    # ./bash.nix
+    ./bash.nix
+    ./zsh.nix
     # ./bat.nix
     # ./direnv.nix
     # ./gh.nix
@@ -19,7 +18,9 @@
     # ./jira.nix
   ];
   home.packages = with pkgs; [
+    neofetch
     mise
+    wget
     # comma # Install and run programs by sticking a , before them
     # distrobox # Nice escape hatch, integrates docker images with my environment
 

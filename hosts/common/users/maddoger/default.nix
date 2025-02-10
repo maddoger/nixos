@@ -10,7 +10,7 @@ in {
     isNormalUser = true;
     description = "Vitaliy Syrchikov";
     initialPassword = "1234568";
-    #shell = pkgs.fish;
+    shell = pkgs.zsh;
     extraGroups = ifTheyExist [
       "docker"
       "audio"

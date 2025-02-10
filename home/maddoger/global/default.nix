@@ -30,7 +30,7 @@
   home.homeDirectory = lib.mkDefault "/home/maddoger";
   home.stateVersion = lib.mkDefault "24.11";
 
-  #colorscheme.mode = lib.mkOverride 1499 "dark";
+  # colorscheme.mode = lib.mkOverride 1499 "dark";
 
   programs = {
     home-manager.enable = true;
