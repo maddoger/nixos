@@ -6,6 +6,7 @@
   imports = [
     ./font.nix
     ./ghostty.nix
+    #./gtk.nix
     #./alacritty.nix
   ];
 
@@ -41,5 +42,10 @@
   #   "terminal" = "ghostty";
   # };
 
-  xdg.portal.enable = true;
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    configPackages = [ pkgs.xdg-desktop-portal-gtk ];
+    xdgOpenUsePortal = true;
+  };
 }
