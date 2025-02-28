@@ -12,7 +12,7 @@
       ../common/users/maddoger
       ../common/optional/pipewire.nix
       ../common/optional/printing.nix
-      ../common/optional/gnome.nix
+      ../common/optional/kde.nix
       ../common/optional/gamemode.nix
       ../common/optional/docker.nix
     ];
