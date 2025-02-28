@@ -1,4 +1,7 @@
 {
+  pkgs,
+  ...
+}: {
   services = {
     xserver = {
       desktopManager.gnome = {
