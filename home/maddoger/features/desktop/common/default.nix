@@ -6,6 +6,7 @@
   imports = [
     ./font.nix
     ./ghostty.nix
+    #./alacritty.nix
   ];
 
   home.packages = [
@@ -16,10 +17,15 @@
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     pkgs.bitwarden-desktop
+    (pkgs.writeShellScriptBin "xterm" ''
+      handlr launch x-scheme-handler/terminal -- "$@"
+    '')
+    (pkgs.writeShellScriptBin "xdg-open" ''
+      handlr open "$@"
+    '')
   ];
 
   programs = {
-    home-manager.enable = true;
     vscode.enable = true;
     firefox.enable = true;
     brave.enable = true;
@@ -35,5 +41,5 @@
   #   "terminal" = "ghostty";
   # };
 
-  # xdg.portal.enable = true;
+  xdg.portal.enable = true;
 }
