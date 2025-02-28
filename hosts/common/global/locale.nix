@@ -2,7 +2,7 @@
   i18n = {
     defaultLocale = lib.mkDefault "en_US.UTF-8";
     extraLocaleSettings = {
-      LC_TIME = lib.mkDefault "ru_RU.UTF-8";
+    # LC_TIME = lib.mkDefault "ru_RU.UTF-8";
     # LC_ADDRESS = "ru_RU.UTF-8";
     # LC_IDENTIFICATION = "ru_RU.UTF-8";
     # LC_MEASUREMENT = "ru_RU.UTF-8";
