@@ -4,6 +4,11 @@
 }: {
   services = {
     xserver = {
+      enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
       desktopManager.gnome = {
         enable = true;
         extraGSettingsOverridePackages = [ pkgs.mutter ];
@@ -11,10 +16,6 @@
           [org.gnome.mutter]
           experimental-features=['scale-monitor-framebuffer']
         '';
-      };
-      displayManager.gdm = {
-        enable = true;
-        autoSuspend = false;
       };
     };
     # gnome.core-utilities.enable = false;
