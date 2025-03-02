@@ -5,9 +5,10 @@
 }: {
   imports = [
     ./font.nix
-    ./ghostty.nix
+    #./ghostty.nix
     #./gtk.nix
-    #./alacritty.nix
+    ./alacritty.nix
+    #./kitty.nix
   ];
 
   home.packages = [
@@ -28,7 +29,6 @@
 
   programs = {
     vscode.enable = true;
-    firefox.enable = true;
     brave.enable = true;
   };
 
